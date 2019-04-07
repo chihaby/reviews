@@ -6,8 +6,7 @@ var path = require("path");
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 5000;
-server.listen(process.env.PORT || port)
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
