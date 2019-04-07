@@ -92,11 +92,9 @@ var handleFormSubmit = function (event) {
     alert("You must enter an example text and description!");
     return;
   }
-
   API.saveExample(example).then(function () {
     refreshExamples();
   });
-
   $exampleText.val("");
   $exampleDescription.val("");
 };
@@ -107,7 +105,6 @@ var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
-
   API.deleteExample(idToDelete).then(function () {
     refreshExamples();
   });
@@ -118,18 +115,15 @@ var handleLikeBtnClick = function () {
     .parent()
     .attr("data-id");
   API.likeExample(idToLike);
-
   apiLikes();
 };
 
 var apiLikes = function () {
-
   var idToLike2 = $(this)
     .parent()
     .attr("data-like");
 
   API.getExamples(idToLike2);
-
   refreshExamples();
 }
 
