@@ -2,22 +2,11 @@ var db = require("../models");
 var path = require("path");
 module.exports = function (app) {
   //Load index page
-  app.get("/", function (req, res) {
-    db.Example3.findAll({}).then(function (results) {
-      var hbObj = {
-        Examples: results
-      }
-      res.render("index", hbObj);
-      //console.log("hboj", hbObj)
-    });
-  });
+  app.get("/", function (req, "index"));
 
 
-  //--------------WORKS ON HTML PAGES-------------------------------/
-  // app.get("/", function (req, res) {
-  //   res.sendFile(path.join(__dirname, "/../models/user.js"));
-  // });
-  //--------------WORKS ON HTML PAGES-------------------------------/
+
+
 
 
   // Load example page and pass in an example by id
