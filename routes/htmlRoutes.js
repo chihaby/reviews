@@ -8,7 +8,7 @@ module.exports = function (app) {
 
   app.get("/example/:id", function (req, res) {
     db.Example3.findAll({ }).then(function (dbExample) {
-      res.render("index", {
+      res.render(index, {
         example: dbExample
       });
     });
