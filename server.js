@@ -6,7 +6,7 @@ var path = require("path");
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
