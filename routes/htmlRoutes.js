@@ -6,6 +6,13 @@ module.exports = function (app) {
     res.render("index");
   });
 
+  app.get("/example/:id", function (req, res) {
+    db.Example3.findAll({ where: { id: req.params.id } }).then(function (dbExample) {
+      res.render("example", {
+        example: dbExample
+      });
+    });
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
