@@ -2,15 +2,18 @@ var db = require("../models");
 var path = require("path");
 module.exports = function (app) {
   //Load index page
-  app.get("/", function (req, res) {
-    res.render("index");
-  });
+  // app.get("/", function (req, res) {
+  //   res.render("index");
+  // });
 
-  app.get("/example/:id", function (req, res) {
+  app.get("/", function (req, res) {
     db.Example3.findAll({ }).then(function (dbExample) {
-      res.render("index");
+      res.render("index", {
+        example: dbExample
+      });
     });
   });
+
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
