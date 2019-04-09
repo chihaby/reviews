@@ -37,12 +37,15 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
-  app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+  // app.listen(PORT, function () {
+  //   console.log(
+  //     "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+  //     PORT,
+  //     PORT
+  //   );
+  // });
+  app.listen(process.env.PORT || 5000, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
 });
 
