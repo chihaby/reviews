@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
-  http.listen((process.env.PORT || 5000), function () {
+  app.listen((process.env.PORT || 5000), function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
