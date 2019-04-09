@@ -2,13 +2,13 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  // app.get("/api/examples", function (req, res) {
-  //   db.Example3.findAll(
-  //     { limit: 10, order: [['like', 'DESC']] }
-  //   ).then(function (dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
+  app.get("/api/examples", function (req, res) {
+    db.Example3.findAll(
+      { limit: 10, order: [['like', 'DESC']] }
+    ).then(function (dbExamples) {
+      res.json(dbExamples);
+    });
+  });
 
   // Create a new example
   app.post("/api/examples", function (req, res) {
