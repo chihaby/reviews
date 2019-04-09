@@ -54,10 +54,10 @@ var refreshExamples = function () {
         })
         .append($a);
 
-      var $deleteButton = $("<delete-button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("x");
-      $li.append($deleteButton);
+      // var $deleteButton = $("<delete-button>")
+      //   .addClass("btn btn-danger float-right delete")
+      //   .text("x");
+      // $li.append($deleteButton);
 
       var $incrementButton = $("<increment-button>")
         .addClass("btn btn-warning float-right counter")
@@ -130,6 +130,6 @@ var apiLikes = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".like", handleLikeBtnClick);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 
