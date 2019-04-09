@@ -1,4 +1,6 @@
-require("dotenv").config();
+//require("dotenv").config();
+var dotenv = require('dotenv');
+dotenv.load();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var path = require("path");
@@ -37,7 +39,7 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
-  app.listen((process.env.PORT || 5000), function () {
+  app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
